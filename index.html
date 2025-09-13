@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio - Ristorante Canasvieiras</title>
+    <title>Menú Premium - Empório das Massas</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.png" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap');
         
@@ -16,22 +22,20 @@
         }
         
         .premium-border {
-            border-image: linear-gradient(90deg, #c9a96e, #f4e4bc, #c9a96e) 1;
+            border-image: linear-gradient(90deg, #005B41, #96c8bc, #005B41) 1;
             border-width: 1px;
             border-style: solid;
         }
         
-        .gold-accent {
-            color: #c9a96e;
-        }
+        .gold-accent { color: #005B41; }
         
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+            background: linear-gradient(90deg, transparent, #005B41, transparent);
         }
         
         .price-gold {
-            color: #b8860b;
+            color: #005B41;
             font-weight: 500;
         }
         
@@ -40,25 +44,44 @@
         }
         
         .item-hover:hover {
-            background: rgba(201, 169, 110, 0.03);
-            border-left: 2px solid #c9a96e;
+            background: rgba(0, 91, 65, 0.03);
+            border-left: 2px solid #005B41;
             padding-left: 22px;
         }
         
-        .elegant-shadow {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
+        .elegant-shadow { box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08); }
         
         .premium-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(201, 169, 110, 0.2);
+            border: 1px solid rgba(0, 91, 65, 0.2);
+        }
+
+        .en-float-btn {
+            position: fixed; right: 16px; bottom: 16px;
+            width: 52px; height: 52px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: #0A0A0A; color: #FFFFFF; text-decoration: none;
+            font-weight: 700; font-family: inherit; letter-spacing: .5px;
+            box-shadow: 0 6px 16px rgba(0,0,0,.25);
+            z-index: 9999; transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .en-float-btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 22px rgba(0,0,0,.28); 
+        }
+        .en-float-btn__icon {
+            width: 28px;
+            height: 28px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .en-float-btn { transition: none; }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-inter">
-    <!-- Header -->
-    <div class="py-16 mb-12">
+<body class="bg-gray-50 font-montserrat">
+    
+    <header class="py-16 mb-12">
         <div class="max-w-5xl mx-auto text-center px-8">
             <div class="premium-card elegant-shadow rounded-none py-12 px-8">
                 <h1 class="font-cormorant text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-wide">
@@ -73,666 +96,612 @@
                 </p>
                 <div class="mt-8">
                     <p class="font-cormorant text-lg text-gray-600 italic">
-                        Cucina Italiana Autentica
+                        Auténtica Cocina Italiana
                     </p>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="max-w-5xl mx-auto px-8 pb-16">
+    <main class="max-w-5xl mx-auto px-8 pb-16">
         
-        <!-- Entradas -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">ANTIPASTI</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">ENSALADAS</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
             <div class="premium-card elegant-shadow rounded-none p-12">
                 <div class="space-y-8">
-                    <div class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Caesar Salad</h3>
-                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Alface romana, croutons artesanais, parmesão reggiano e molho caesar tradicional</p>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Coliseu Salad</h3>
-                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mix de folhas nobres com ingredientes especiais selecionados pela casa</p>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Empório Salad</h3>
-                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Salada especial com produtos selecionados do nosso empório gourmet</p>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Caprese Salad</h3>
-                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mussarela di bufala, tomate san marzano, manjericão fresco e azeite extra virgem</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Massas -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">PASTE FRESCHE</h2>
-                <div class="section-divider mx-auto w-24"></div>
-                <p class="font-montserrat text-sm text-gray-500 mt-4 tracking-wide">FETTUCCINE & SPAGHETTI</p>
-            </div>
-            
-            <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="space-y-1">
-                    <!-- Destaque especial -->
-                    <div class="item-hover py-8 px-6 border-b-2 border-gold-accent/20 mb-8">
+                    <article class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
                         <div class="flex justify-between items-start">
-                            <div class="flex-1">
-                                <h3 class="font-cormorant text-3xl font-medium text-gray-900 mb-2">Fettuccine Parmegiana</h3>
-                                <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Para duas pessoas • Massa fresca artesanal com molho parmegiana especial da casa</p>
-                            </div>
-                            <span class="price-gold font-montserrat text-2xl font-medium ml-8">95,90</span>
+                            <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Ensalada César</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4 text-xl">$45,00</span>
                         </div>
-                    </div>
+                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mix de lechugas, tiras de pollo, provolone rallado, aderezo de yogur y naranja, croutones.</p>
+                    </article>
                     
-                    <!-- Demais pratos -->
-                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Bolognese</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">49,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho bolognese tradicional da Emilia-Romagna</p>
+                    <article class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Ensalada Coliseo</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4 text-xl">$49,90</span>
                         </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Frango Cremoso</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">42,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Frango desfiado em molho cremoso com ervas finas</p>
+                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mix de lechugas, tiras de pollo, zanahoria rallada, cebolla empanizada, salsa barbecue, mostaza y miel.</p>
+                    </article>
+                    
+                    <article class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
+                        <div class="flex justify-between items-start">
+                             <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Ensalada del Empório</h3>
+                             <span class="price-gold font-montserrat font-medium ml-4 text-xl">$55,00</span>
                         </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Quattro Formaggi</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">54,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Gorgonzola, parmesão, pecorino e mussarela</p>
+                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mix de lechugas, rúcula, mozzarella de búfala, salsa pesto, jamón de Parma, tomate cherry.</p>
+                    </article>
+                    
+                    <article class="item-hover py-6 px-4 border-b border-gray-100 last:border-b-0">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Ensalada Caprese</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4 text-xl">$40,00</span>
                         </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Roma</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">46,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Receita especial da casa com ingredientes selecionados</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Vegetariano</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">41,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Vegetais frescos da estação em molho especial</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Parmegiana</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">54,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Porção individual com molho parmegiana tradicional</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine ai Gamberi</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">54,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Camarões frescos da costa catarinense</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine alla Carbonara</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">49,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Receita romana autêntica com guanciale e pecorino</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-cormorant text-xl font-medium text-gray-900">Fettuccine Alfredo com Mignon</h3>
-                                <span class="price-gold font-montserrat font-medium ml-4">59,90</span>
-                            </div>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Filé mignon em molho alfredo cremoso com parmesão</p>
-                        </div>
-                    </div>
+                        <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Mix de lechugas, tomate cherry, mozzarella de búfala, salsa pesto.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Gnocchi -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">GNOCCHI</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">PLATOS EJECUTIVOS</h2>
+                <div class="section-divider mx-auto w-24"></div>
+            </div>
+            
+            <div class="premium-card elegant-shadow rounded-none p-12">
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Picanha a la Parrilla</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$59,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Acompañada de arroz, porotos, papas fritas y ensalada.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Filete de Tilapia</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$42,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">(A la milanesa o a la parrilla) con arroz, porotos, papas fritas y ensalada.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Milanesa de Carne o Pollo</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$41,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Acompañada de arroz, porotos, papas fritas y ensalada.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Panqueque</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$41,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa pomodoro o bechamel, queso gratinado, arroz, ensalada y papas fritas.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Parmegiana</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$54,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Acompañada de arroz, porotos, papas fritas y ensalada.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Camarones a la Milanesa</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$52,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Acompañados de arroz, papas fritas y ensalada.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">FETTUCCINE</h2>
+                <div class="section-divider mx-auto w-24"></div>
+            </div>
+            
+            <div class="premium-card elegant-shadow rounded-none p-12">
+                <article class="item-hover py-8 px-6 border-b-2 border-green-800/20 mb-8">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="font-cormorant text-3xl font-medium text-gray-900 mb-2">Fettuccine a la Parmegiana</h3>
+                            <p class="font-montserrat text-sm text-gray-600 leading-relaxed">Pasta artesanal, salsa pomodoro, queso gratinado, milanesa de carne o pollo.</p>
+                        </div>
+                        <div class="text-right ml-4">
+                            <span class="block price-gold font-montserrat text-lg font-medium">1p: $54,90</span>
+                            <span class="block price-gold font-montserrat text-lg font-medium mt-1">2p: $95,90</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Camarones de la Isla</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$59,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa bechamel con muzzarella, gorgonzola, parmesano y provolone.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Cuatro Quesos</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$54,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal con salsa de cuatro quesos.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Alfredo con Medallón</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$59,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa Alfredo y medallón de lomo.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Bolognese</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$49,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa pomodoro con selección de carnes nobles.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Roma</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$46,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa pesto, tomate cherry, mozzarella de búfala, parmesano.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Vegetariano</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$46,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa pomodoro o bechamel con zanahoria, tomate seco, brócoli y champiñones.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Alla Carbonara</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$49,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">La carbonara del chef, una reinterpretación de la tradición italiana.</p>
+                    </article>
+                    <article class="item-hover py-4 px-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-cormorant text-xl font-medium text-gray-900">Pollo Cremoso</h3>
+                            <span class="price-gold font-montserrat font-medium ml-4">$42,90</span>
+                        </div>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Pasta artesanal, salsa bechamel con tiras de pollo a la parrilla y muzzarella.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">ÑOQUIS</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
             <div class="premium-card elegant-shadow rounded-none p-12">
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="item-hover py-6 px-4 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-4">Bolognese</h3>
-                        <span class="price-gold font-montserrat text-xl font-medium">45,90</span>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-4 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-4">Pesto</h3>
-                        <span class="price-gold font-montserrat text-xl font-medium">45,90</span>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-4 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-4">Quattro Formaggi</h3>
-                        <span class="price-gold font-montserrat text-xl font-medium">45,90</span>
-                    </div>
+                    <article class="item-hover py-6 px-4 text-center">
+                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Bolognese</h3>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-4">Ñoquis de papa artesanales con salsa pomodoro y selección de carnes.</p>
+                        <span class="price-gold font-montserrat text-xl font-medium">$45,90</span>
+                    </article>
+                    <article class="item-hover py-6 px-4 text-center">
+                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Pesto</h3>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-4">Ñoquis de papa artesanales con nuestra tradicional salsa pesto.</p>
+                        <span class="price-gold font-montserrat text-xl font-medium">$45,90</span>
+                    </article>
+                    <article class="item-hover py-6 px-4 text-center">
+                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-2">Cuatro Quesos</h3>
+                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-4">Ñoquis de papa artesanales con salsa de muzzarella, gorgonzola, parmesano y provolone.</p>
+                        <span class="price-gold font-montserrat text-xl font-medium">$45,90</span>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Lasanha -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">LASAGNE</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">LASAÑA</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
-            <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="item-hover py-6 px-6">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Bolognese</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">54,90</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">74,90</span>
-                            </div>
-                        </div>
+            <div class="premium-card elegant-shadow rounded-none p-12 text-center">
+                <div class="grid grid-cols-2 gap-x-4 max-w-sm mx-auto">
+                    <div>
+                        <p class="font-montserrat text-sm text-gray-600">(para 1 persona)</p>
+                        <p class="price-gold font-montserrat font-semibold text-2xl mt-1">$54,90</p>
                     </div>
-                    
-                    <div class="item-hover py-6 px-6">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Quattro Formaggi</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">59,90</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">79,90</span>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="font-montserrat text-sm text-gray-600">(para 2 personas)</p>
+                        <p class="price-gold font-montserrat font-semibold text-2xl mt-1">$74,90</p>
                     </div>
-                    
-                    <div class="item-hover py-6 px-6">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Pollo</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">54,90</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">74,90</span>
-                            </div>
-                        </div>
+                </div>
+                
+                <div class="section-divider mx-auto w-48 my-8"></div>
+                
+                <ul class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2">
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Bolognese|</h3></li>
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Pollo|</h3></li>
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Vegetariana|</h3></li>
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Cuatro Quesos|</h3></li>
+                </ul>
+                <div class="mt-6 text-center max-w-2xl mx-auto">
+                    <p class="font-montserrat text-xs text-gray-600 leading-relaxed">
+                        <strong>Bolognese|</strong> Pasta artesanal, bechamel, salsa pomodoro con carnes nobles, muzzarella gratinada.<br>
+                        <strong>Pollo|</strong> Pasta artesanal, bechamel, salsa pomodoro, pechuga de pollo desmenuzada, muzzarella gratinada.<br>
+                        <strong>Vegetariana|</strong> Berenjena, salsa blanca artesanal, muzzarella y brócoli.<br>
+                        <strong>Cuatro Quesos|</strong> Pasta artesanal, bechamel, y nuestra selección de cuatro quesos.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">CANELONES</h2>
+                <div class="section-divider mx-auto w-24"></div>
+            </div>
+            
+            <div class="premium-card elegant-shadow rounded-none p-12 text-center">
+                <div class="grid grid-cols-2 gap-x-4 max-w-sm mx-auto">
+                     <div>
+                        <p class="font-montserrat text-sm text-gray-600">(para 1 persona)</p>
+                        <p class="price-gold font-montserrat font-semibold text-2xl mt-1">$54,90</p>
                     </div>
-                    
-                    <div class="item-hover py-6 px-6">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Vegetariana</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">54,90</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">74,90</span>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="font-montserrat text-sm text-gray-600">(para 2 personas)</p>
+                        <p class="price-gold font-montserrat font-semibold text-2xl mt-1">$74,90</p>
                     </div>
+                </div>
+                
+                <p class="font-montserrat text-sm text-gray-500 mt-4">(Acompañados de ensalada y papas fritas)</p>
+                
+                <div class="section-divider mx-auto w-48 my-8"></div>
+                
+                <ul class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2">
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Bolognese|</h3></li>
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Pollo|</h3></li>
+                    <li><h3 class="font-cormorant text-xl text-gray-800">Vegetariano|</h3></li>
+                </ul>
+                 <div class="mt-6 text-center max-w-2xl mx-auto">
+                    <p class="font-montserrat text-xs text-gray-600 leading-relaxed">
+                        <strong>Bolognese|</strong> Pasta artesanal, salsa pomodoro, carnes nobles, gratinado con muzzarella.<br>
+                        <strong>Pollo|</strong> Pasta artesanal, salsa pomodoro con pollo desmenuzado y finas hierbas, gratinado con muzzarella.<br>
+                        <strong>Vegetariano|</strong> Pasta artesanal, salsa pomodoro o bechamel con zanahoria, tomate seco, brócoli, champiñones, gratinado con muzzarella.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Canelone -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">CANNELLONI</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">PORCIONES PARA COMPARTIR</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
             <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="item-hover py-6 px-6 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Bolognese</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">50,00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">70,00</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-6 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Pollo</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">50,00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">70,00</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-6 px-6 text-center">
-                        <h3 class="font-cormorant text-2xl font-medium text-gray-900 mb-6">Vegetariano</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Uma pessoa</span>
-                                <span class="price-gold font-montserrat font-medium">50,00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-montserrat text-sm text-gray-600">Duas pessoas</span>
-                                <span class="price-gold font-montserrat font-medium">70,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Picanha con Polenta</span><span class="price-gold font-montserrat font-medium">$98,00</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Filete de Lomo con Papas</span><span class="price-gold font-montserrat font-medium">$98,00</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Arroz (200g)</span><span class="price-gold font-montserrat font-medium">$12,00</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Porotos (200g)</span><span class="price-gold font-montserrat font-medium">$12,00</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Tiras de Carne (150g)</span><span class="price-gold font-montserrat font-medium">$12,90</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Tiras de Pollo (150g)</span><span class="price-gold font-montserrat font-medium">$12,90</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Papas Fritas (Chica)</span><span class="price-gold font-montserrat font-medium">$10,00</span></li>
+                    <li class="flex justify-between items-center py-2 border-b border-gray-100"><span class="font-cormorant text-lg text-gray-800">Papas Fritas (Grande)</span><span class="price-gold font-montserrat font-medium">$30,00</span></li>
+                </ul>
             </div>
         </section>
 
-        <!-- Pratos Especiais -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">SPECIALITÀ</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">PIZZAS NAPOLETANAS</h2>
                 <div class="section-divider mx-auto w-24"></div>
+                <p class="font-montserrat text-sm text-gray-500 mt-4 tracking-wide">Masa con 48h de fermentación • Auténtica tradición italiana</p>
             </div>
             
             <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="space-y-6">
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Picanha Grelhada</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Corte nobre brasileiro grelhado no ponto ideal</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Strogonoff di Pollo</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Frango cremoso com batata palha crocante</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Milanesa</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Carne ou frango empanado dourado</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Panqueca Especial</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Carne ou frango com molho da casa</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Gamberi alla Milanese</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Camarões frescos empanados e dourados</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pizzas -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">PIZZE NAPOLETANE</h2>
-                <div class="section-divider mx-auto w-24"></div>
-                <p class="font-montserrat text-sm text-gray-500 mt-4 tracking-wide">Massa com 48h de fermentação • Tradição italiana autêntica</p>
-            </div>
-            
-            <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="space-y-6">
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Mariana</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho de tomate, orégano e alho</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Margherita</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho de tomate, mussarela de búfala, manjericão</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Fugazzeta</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Queijo e cebola</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Palácio Barolo</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Queijo, presunto, pimentão vermelho, orégano, azeitona</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Pepperoni</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho de tomate, pepperoni, mussarela, manjericão</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Calabresa</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Mussarela, calabresa, cebola roxa</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Capricciosa</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Mussarela, rúcula, tomate seco</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Quattro Formaggi</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho artesanal, mussarela, gorgonzola, parmesão, ricota de búfala</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Alla Caprese</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho artesanal, mussarela de búfala, molho pesto, manjericão</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">La Mamma</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Molho artesanal, mussarela, salame italiano, presunto de parma, tomate cereja</p>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Gustto e Passione</h3>
-                        <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Mussarela, pera, gorgonzola, mel e nozes</p>
-                    </div>
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-2">
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Mariana</h3><span class="price-gold font-montserrat font-medium ml-4">$50,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, orégano y ajo.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Capricciosa</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, rúcula y tomate seco.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Calabresa</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, calabresa y cebolla morada.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Margherita</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, mozzarella de búfala y albahaca.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Fugazzeta</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella y cebolla.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Pepperoni</h3><span class="price-gold font-montserrat font-medium ml-4">$70,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, pepperoni y albahaca.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">La Mamma</h3><span class="price-gold font-montserrat font-medium ml-4">$80,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, salami italiano, jamón de Parma, tomate cherry.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Gusto y Pasión</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, pera, gorgonzola, miel y nueces.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Cuatro Quesos</h3><span class="price-gold font-montserrat font-medium ml-4">$70,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, gorgonzola, parmesano y ricota de búfala.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Palacio Barolo</h3><span class="price-gold font-montserrat font-medium ml-4">$65,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, jamón, pimiento rojo, orégano, aceitunas.</p></article>
+                    <article class="item-hover py-4 px-4"><div class="flex justify-between items-start"><h3 class="font-cormorant text-xl font-medium text-gray-900">Alla Caprese</h3><span class="price-gold font-montserrat font-medium ml-4">$60,00</span></div><p class="font-montserrat text-xs text-gray-600 leading-relaxed">Salsa artesanal, muzzarella, mozzarella de búfala, salsa pesto y albahaca.</p></article>
                 </div>
                 
                 <div class="mt-12 pt-8 border-t border-gray-200">
                     <div class="text-center mb-8">
-                        <h3 class="font-cormorant text-2xl font-light gold-accent mb-4">Pizze Dolci</h3>
+                        <h3 class="font-cormorant text-2xl font-light gold-accent mb-4">Pizzas Dulces</h3>
                         <div class="section-divider mx-auto w-16"></div>
                     </div>
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="item-hover py-4 px-4 text-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900 mb-2">Dulce Pistache</h3>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Lâminas de amêndoa</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4 text-center">
+                        <article class="item-hover py-4 px-4 text-center">
+                            <h3 class="font-cormorant text-lg font-medium text-gray-900 mb-2">Dulce Pistacho</h3>
+                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-2">Masa dulce con láminas de almendra.</p>
+                            <span class="price-gold font-montserrat font-medium">$75,00</span>
+                        </article>
+                        <article class="item-hover py-4 px-4 text-center">
                             <h3 class="font-cormorant text-lg font-medium text-gray-900 mb-2">Dulce Nutella</h3>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Mix de castanhas, leite ninho</p>
-                        </div>
-                        
-                        <div class="item-hover py-4 px-4 text-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900 mb-2">Dulce Chocolate Branco</h3>
-                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed">Queijo brie, geleia de frutas vermelhas</p>
-                        </div>
+                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-2">Con mix de frutos secos y leche en polvo.</p>
+                            <span class="price-gold font-montserrat font-medium">$75,00</span>
+                        </article>
+                        <article class="item-hover py-4 px-4 text-center">
+                            <h3 class="font-cormorant text-lg font-medium text-gray-900 mb-2">Dulce Chocolate Blanco</h3>
+                            <p class="font-montserrat text-xs text-gray-600 leading-relaxed mb-2">Con queso brie y mermelada de frutos rojos.</p>
+                            <span class="price-gold font-montserrat font-medium">$75,00</span>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bebidas -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">BEVANDE</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">BEBIDAS & JUGOS</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
-            <div class="space-y-8">
-                <!-- Não Alcoólicas -->
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="premium-card elegant-shadow rounded-none p-8">
-                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Analcoliche</h4>
-                    <div class="grid md:grid-cols-2 gap-3">
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Água sem gás</span>
-                            <span class="price-highlight font-bold">R$ 5,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Água com gás</span>
-                            <span class="price-highlight font-bold">R$ 6,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Coca-Cola</span>
-                            <span class="price-highlight font-bold">R$ 8,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Coca-Zero</span>
-                            <span class="price-highlight font-bold">R$ 8,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Guaraná</span>
-                            <span class="price-highlight font-bold">R$ 8,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Sprite</span>
-                            <span class="price-highlight font-bold">R$ 8,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Água Tônica</span>
-                            <span class="price-highlight font-bold">R$ 8,00</span>
-                        </div>
-                    </div>
+                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Bebidas</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span class="text-gray-700">Agua sin gas</span><span class="price-gold font-bold">$5,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Agua con gas</span><span class="price-gold font-bold">$6,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Coca Cola</span><span class="price-gold font-bold">$8,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Coca Zero</span><span class="price-gold font-bold">$8,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Sprite</span><span class="price-gold font-bold">$8,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Agua Tónica</span><span class="price-gold font-bold">$8,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Guaraná</span><span class="price-gold font-bold">$8,00</span></li>
+                    </ul>
+                    </ul>
+                    </ul>
                 </div>
-                
-                <!-- Cervejas -->
                 <div class="premium-card elegant-shadow rounded-none p-8">
-                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Birre</h4>
-                    <div class="grid md:grid-cols-2 gap-3">
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Corona Long Neck</span>
-                            <span class="price-highlight font-bold">R$ 14,90</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Heineken Long Neck</span>
-                            <span class="price-highlight font-bold">R$ 14,90</span>
-                        </div>
-                    </div>
+                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Cervezas</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span class="text-gray-700">Corona Long Neck</span><span class="price-gold font-bold">$14,90</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Heineken Long Neck</span><span class="price-gold font-bold">$14,90</span></li>
+                    </ul>
                 </div>
-                
-                <!-- Vinhos -->
-                <div class="premium-card elegant-shadow rounded-none p-8">
-                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Vini</h4>
-                    <div class="space-y-3">
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Taça (Branco ou Cabernet Sauvignon)</span>
-                            <span class="price-highlight font-bold">R$ 20,00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">Garrafa</span>
-                            <span class="text-gray-600 italic">Consultar atendente</span>
-                        </div>
-                    </div>
+                <div class="premium-card elegant-shadow rounded-none p-8 md:col-span-2">
+                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Jugos Naturales</h4>
+                    <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2">
+                         <li class="flex justify-between"><span class="text-gray-700">Mix de frutas</span><span class="price-gold font-medium">$17,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Naranja</span><span class="price-gold font-medium">$15,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Frutos Rojos</span><span class="price-gold font-medium">$14,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Maracuyá</span><span class="price-gold font-medium">$13,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Frutilla</span><span class="price-gold font-medium">$13,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Ananá</span><span class="price-gold font-medium">$12,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Ananá y Menta</span><span class="price-gold font-medium">$12,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Limón</span><span class="price-gold font-medium">$12,00</span></li>
+                         <li class="flex justify-between"><span class="text-gray-700">Sandía</span><span class="price-gold font-medium">$12,00</span></li>
+                    </ul>
+                </div>
+                 <div class="premium-card elegant-shadow rounded-none p-8 md:col-span-2">
+                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Jugos Detox</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span class="text-gray-700">Ananá, limón, menta y jengibre</span><span class="price-gold font-bold">$18,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Naranja, zanahoria, remolacha y jengibre</span><span class="price-gold font-bold">$18,00</span></li>
+                        <li class="flex justify-between"><span class="text-gray-700">Naranja, zanahoria, ananá y jengibre</span><span class="price-gold font-bold">$18,00</span></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Drinks -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">COCKTAILS</h2>
+                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">SODA ITALIANA</h2>
                 <div class="section-divider mx-auto w-24"></div>
             </div>
             
             <div class="premium-card elegant-shadow rounded-none p-12">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Aperol Spritz</h3>
-                            <span class="price-gold font-montserrat font-medium">34,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Limoncello Spritz</h3>
-                            <span class="price-gold font-montserrat font-medium">34,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Garibaldi</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Caipirinha</h3>
-                            <span class="price-gold font-montserrat font-medium">20,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Caipiroska Smirnoff</h3>
-                            <span class="price-gold font-montserrat font-medium">25,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-cormorant text-lg font-medium text-gray-900">Caipirinha de Frutas</h3>
-                                <p class="font-montserrat text-xs text-gray-600 mt-1">Cachaça ou vodka</p>
-                            </div>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Mojito</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Cuba Libre</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Fernet e Coca</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Negroni</h3>
-                            <span class="price-gold font-montserrat font-medium">35,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Gin Tônica</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Gin Tropical</h3>
-                            <span class="price-gold font-montserrat font-medium">35,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Moscow Mule</h3>
-                            <span class="price-gold font-montserrat font-medium">35,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Sensação</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="item-hover py-4 px-4">
-                        <div class="flex justify-between items-center">
-                            <h3 class="font-cormorant text-lg font-medium text-gray-900">Beijo na Boca</h3>
-                            <span class="price-gold font-montserrat font-medium">30,00</span>
-                        </div>
-                    </div>
-                </div>
+                <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4 text-center">
+                    <li class="item-hover py-4 px-2">
+                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Mandarina</h3>
+                        <span class="price-gold font-montserrat font-medium">$12,00</span>
+                    </li>
+                    <li class="item-hover py-4 px-2">
+                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Limón Siciliano</h3>
+                        <span class="price-gold font-montserrat font-medium">$13,00</span>
+                    </li>
+                    <li class="item-hover py-4 px-2">
+                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Manzana Verde</h3>
+                        <span class="price-gold font-montserrat font-medium">$12,00</span>
+                    </li>
+                    <li class="item-hover py-4 px-2">
+                        <h3 class="font-cormorant text-xl font-medium text-gray-900 mb-2">Jengibre</h3>
+                        <span class="price-gold font-montserrat font-medium">$12,00</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Sucos -->
-        <section class="mb-16">
-            <div class="text-center mb-12">
-                <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">SUCCHI NATURALI</h2>
-                <div class="section-divider mx-auto w-24"></div>
-            </div>
-            
-            <div class="space-y-8">
-                <div class="premium-card elegant-shadow rounded-none p-8">
-                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Succhi Freschi</h4>
-                    <div class="grid md:grid-cols-3 gap-4 text-center">
-                        <span class="font-montserrat text-sm text-gray-700">Abacaxi</span>
-                        <span class="font-montserrat text-sm text-gray-700">Abacaxi com Hortelã</span>
-                        <span class="font-montserrat text-sm text-gray-700">Morango</span>
-                        <span class="font-montserrat text-sm text-gray-700">Maracujá</span>
-                        <span class="font-montserrat text-sm text-gray-700">Frutas Vermelhas</span>
-                        <span class="font-montserrat text-sm text-gray-700">Melancia</span>
-                        <span class="font-montserrat text-sm text-gray-700">Limão</span>
-                        <span class="font-montserrat text-sm text-gray-700">Laranja</span>
-                        <span class="font-montserrat text-sm text-gray-700">Detox</span>
-                    </div>
-                </div>
-                
-                <div class="premium-card elegant-shadow rounded-none p-8">
-                    <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Soda Italiana</h4>
-                    <div class="grid md:grid-cols-2 gap-4 text-center">
-                        <span class="font-montserrat text-sm text-gray-700">Tangerina</span>
-                        <span class="font-montserrat text-sm text-gray-700">Limão Siciliano</span>
-                        <span class="font-montserrat text-sm text-gray-700">Maçã Verde</span>
-                        <span class="font-montserrat text-sm text-gray-700">Gengibre</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <section class="mb-8">
+    <div class="text-center mb-12">
+        <h2 class="font-cormorant text-4xl font-light text-gray-900 mb-4 tracking-wide">VINOS & CÓCTELES</h2>
+        <div class="section-divider mx-auto w-24"></div>
     </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="premium-card elegant-shadow rounded-none p-8">
+            <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Vinos</h4>
+            <ul class="space-y-3">
+                <li class="flex justify-between"><span class="text-gray-700">Copa (Blanco o Cabernet Sauvignon)</span><span class="price-gold font-bold">$18,00</span></li>
+                <li class="flex justify-between"><span class="text-gray-700">Botella</span><span class="text-gray-600 italic">Consultar al mozo</span></li>
+            </ul>
+        </div>
 
-    <!-- Footer -->
-    <footer class="py-12 mt-20">
+        <div class="premium-card elegant-shadow rounded-none p-8 md:col-span-2">
+            <h4 class="font-cormorant text-2xl font-medium text-gray-900 mb-6 text-center">Cócteles</h4>
+            <ul class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Moscow Mule</span>
+                        <p class="font-montserrat text-xs text-gray-500 mt-1">Vodka, cerveza de jengibre y jugo de lima.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$35,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Negroni</span>
+                        <p class="font-montserrat text-xs text-gray-500 mt-1">Gin, Campari y vermut rojo. Un clásico italiano.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$35,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Sensación</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Gin, maracuyá, licor de durazno y un toque de limón.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$35,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Aperol Spritz</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Aperol, prosecco y agua con gas. Refrescante y vibrante.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$34,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Limoncello Spritz</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Limoncello, prosecco y un toque de menta fresca.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$34,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Garibaldi</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">La combinación perfecta de Campari y jugo de naranja.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$34,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Gin Tropical</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Gin, jugo de ananá, maracuyá y un toque de granadina.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$35,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Gin Tónic</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Gin premium y agua tónica, aromatizado con botánicos.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$35,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Mojito</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Ron, menta fresca, azúcar, lima y agua con gas.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$30,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Cuba Libre</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Ron, Coca-Cola y una rodaja de lima fresca.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$30,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Fernet con Coca-Cola</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">El clásico argentino, con la medida perfecta de Fernet.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$30,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Beso en la Boca</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">Vodka, durazno, naranja y un toque de granadina.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$30,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Caipiriña</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">El ícono de Brasil: cachaça, lima y azúcar.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$20,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Caipiroska (Smirnoff)</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">La versión internacional con vodka Smirnoff, lima y azúcar.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$25,00</span>
+                </li>
+                
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700">Caipiriña de Frutas</span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1">(cachaza o vodka)
+1 fruta por bebida: maracuyá, fresa, piña, frutos rojos.</p>
+                    </div>
+                    <span class="price-gold font-medium ml-4">$30,00</span>
+                </li>
+
+                <li class="flex justify-between items-start">
+                    <div>
+                        <span class="text-gray-700"></span>
+                         <p class="font-montserrat text-xs text-gray-500 mt-1"></p>
+                    </div>
+                    <span class="price-gold font-medium ml-4"></span>
+                </li>
+
+            </ul>
+        </div>
+         </div>
+</section>
+
+    </main>
+
+    <footer class="py-12 mt-0">
         <div class="max-w-5xl mx-auto text-center px-8">
             <div class="premium-card elegant-shadow rounded-none py-8 px-12">
                 <div class="section-divider mx-auto w-32 mb-6"></div>
-                <p class="font-cormorant text-2xl font-light text-gray-900 mb-2">Buon Appetito</p>
+                <p class="font-cormorant text-2xl font-light text-gray-900 mb-2">¡Buen Provecho!</p>
                 <p class="font-montserrat text-sm text-gray-500 tracking-widest">CANASVIEIRAS • FLORIANÓPOLIS • SANTA CATARINA</p>
                 <div class="section-divider mx-auto w-16 mt-6"></div>
             </div>
         </div>
     </footer>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97566d9d964400f3',t:'MTc1NjI0MzgwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
 
+    <a class="en-float-btn" href="https://example.com/menu-pt" aria-label="Ver menú en Portugués" role="link" title="Cambiar a Portugués">
+      <img src="7.png" alt="Ícono del idioma portugués" class="en-float-btn__icon">
+    </a>
+
+</body>
+</html>
